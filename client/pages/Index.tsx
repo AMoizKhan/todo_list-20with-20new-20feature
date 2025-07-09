@@ -199,12 +199,12 @@ export default function Index() {
       <div className="relative z-10 container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-            <Sparkles className="text-yellow-300 animate-pulse" />
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 flex items-center justify-center gap-3">
+            <Sparkles className="text-yellow-500 animate-pulse" />
             Daily Goals
-            <Sparkles className="text-yellow-300 animate-pulse" />
+            <Sparkles className="text-yellow-500 animate-pulse" />
           </h1>
-          <p className="text-white/80 text-lg">
+          <p className="text-black/80 text-lg">
             {new Date().toLocaleDateString("en-US", {
               weekday: "long",
               year: "numeric",
@@ -218,12 +218,12 @@ export default function Index() {
         {dailyQuote && (
           <Card className="glass-card p-6 mb-8 animate-slide-in">
             <div className="flex items-start gap-4">
-              <Quote className="text-white/60 flex-shrink-0 mt-1" size={24} />
+              <Quote className="text-black/60 flex-shrink-0 mt-1" size={24} />
               <div>
-                <p className="text-white text-lg italic mb-2">
+                <p className="text-black text-lg italic mb-2">
                   "{dailyQuote.text}"
                 </p>
-                <p className="text-white/70 text-sm">— {dailyQuote.author}</p>
+                <p className="text-black/70 text-sm">— {dailyQuote.author}</p>
               </div>
             </div>
           </Card>
@@ -232,8 +232,8 @@ export default function Index() {
         {/* Progress Bar */}
         <Card className="glass-card p-4 mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-white/90 font-medium">Progress</span>
-            <span className="text-white/70 text-sm">
+            <span className="text-black/90 font-medium">Progress</span>
+            <span className="text-black/70 text-sm">
               {completedCount} of {totalCount} completed
             </span>
           </div>
@@ -253,7 +253,7 @@ export default function Index() {
         {/* Add Task Form */}
         <Card className="glass-card p-6 mb-6">
           <div className="space-y-4">
-            <Label className="text-white text-lg font-medium">
+            <Label className="text-black text-lg font-medium">
               Add New Task
             </Label>
             <div className="flex flex-col md:flex-row gap-4">
@@ -263,7 +263,7 @@ export default function Index() {
                   value={newTask}
                   onChange={(e) => setNewTask(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addTask()}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-white/40"
+                  className="bg-white/20 border-white/30 text-black placeholder:text-black/50 focus:border-white/50"
                 />
               </div>
               <Select
@@ -272,7 +272,7 @@ export default function Index() {
                   setSelectedCategory(value)
                 }
               >
-                <SelectTrigger className="w-full md:w-40 bg-white/10 border-white/20 text-white">
+                <SelectTrigger className="w-full md:w-40 bg-white/20 border-white/30 text-black">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -283,7 +283,7 @@ export default function Index() {
               </Select>
               <Button
                 onClick={addTask}
-                className="bg-white/20 hover:bg-white/30 text-white border-white/20 hover:border-white/40"
+                className="bg-white/20 hover:bg-white/30 text-black border-white/30 hover:border-white/50"
                 size="default"
               >
                 <Plus size={20} />
@@ -307,7 +307,7 @@ export default function Index() {
                   "px-4 py-2 rounded-md text-sm font-medium transition-all",
                   filter === tab.key
                     ? "bg-white text-purple-600 shadow-md"
-                    : "text-white/70 hover:text-white hover:bg-white/10",
+                    : "text-black/70 hover:text-black hover:bg-white/10",
                 )}
               >
                 {tab.label}
@@ -320,8 +320,8 @@ export default function Index() {
         <div className="space-y-3">
           {filteredTasks.length === 0 ? (
             <Card className="glass-card p-8 text-center">
-              <Calendar className="mx-auto text-white/50 mb-4" size={48} />
-              <p className="text-white/70 text-lg">
+              <Calendar className="mx-auto text-black/50 mb-4" size={48} />
+              <p className="text-black/70 text-lg">
                 {filter === "completed"
                   ? "No completed tasks yet"
                   : filter === "active"
@@ -402,7 +402,7 @@ export default function Index() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-white/60">
+        <div className="text-center mt-12 text-black/60">
           <p className="text-sm">
             Drag and drop tasks to reorder • Data saved locally
           </p>
